@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>aggiungi nota - notemaster</title>
+  <link rel="shortcut icon" href="img/book.svg"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/notes.css"/>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+
+  <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body class="notes-page">
+  <div class="top-bar">
+  <nav>
+    <a href="subjects.html#scegli-materia">Home</a>
+    <a href="feedback.html">Dacci un feedback</a>
+    <a href="php/logout.php">Logout</a>
+  </nav>
+</div>
+  <div class="fullscreen-container">
+    <img src="img/notes2.jpeg" alt="NoteMaster Background" class="background-img" />
+    <div class="overlay">
+      <img src="img/logo bootstrap.png" class="mb-2" width="100px">
+        <div id="app" class="container mt-5 p-4 bg-light rounded shadow">
+            <h1>Aggiungi nota per {{ subject }}</h1>
+
+            <form @submit.prevent="submitNote">
+                <input type="text" id="title" class="form-control" v-model="note.title" placeholder="titolo" required />
+                <textarea id="body" class="form-control" v-model="note.body" placeholder="scrivi la nota..." 
+                 style="font-size: 1rem; padding: 12px; width: 100%;"required></textarea>
+                <button type="submit" class="btn btn-primary">salva nota</button>
+            </form>
+
+            <p v-if="message" class="message">{{ message }}</p>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+          subject: params.get('subject') || '',
+          note: {
+            title: '',
+            body: ''
+          },
+          message: ''
+        };
+      },
+      methods: {
+        submitNote() {
+          // invia i dati a addNote.php
+          const formData = new FormData();
+          formData.append('subject', this.subject);
+          formData.append('title', this.note.title);
+          formData.append('body', this.note.body);
+
+          fetch('php/addNote.php', {
+            method: 'POST',
+            body: formData,
+            credentials: 'include'
+          })
+          .then(res => res.text())
+          .then(text => {
+            this.message = 'nota salvata con successo!';
+            this.note.title = '';
+            this.note.body = '';
+          })
+          .catch(err => {
+            console.error('errore:', err);
+            this.message = 'errore nel salvataggio.';
+          });
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>

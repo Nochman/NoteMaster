@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>EsercitazioneLab-Pagina di login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="shortcut icon" href="img/book.svg"/>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+    <script src="js/rememberMe.js" type="application/javascript"></script>
+</head>
+<body class="text-center">
+    <div class="fullscreen-container">
+    <img src="img/notes2.jpeg" alt="NoteMaster Background" class="background-img" />
+    <div class="overlay" id="div-form">
+        <p id="div-msg"></p>
+    <form name="myForm" id="loginForm" class="form-signin m-auto">
+        <img src="img/logo bootstrap.png" class="mb-2" width="100px">
+        <h1 class="mb-3">Loggati !</h1>
+        <input type="text" id="email" placeholder="Indirizzo e-mail" name="inputEmail" class="form-control" required>
+        <input type="password" id="password" placeholder="Password" name="inputPassword" class="form-control" required>
+        <div id="divRemember" class="mb-2">
+            <input type="checkbox" name="remember" id="rmb">
+            <label for="rmb">Ricordami</label>
+        </div>
+        <p>Non hai un account? <a href="registrazione.html">Registrati qui</a>.</p>
+
+        <button type="submit" id="invia-btn" class="btn btn-primary">Invia !</button>
+    </form>
+    </div>
+    </div>
+    <script src="js/login.js" type="application/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benvenuto - NoteMaster</title>
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Benvenuto su NoteMaster</h1>
+    <p>Esplora note, conoscenze e idee attraverso le materie.</p>
+
+    <div class="cta-buttons">
+        <a href="login.html" class="btn">Accedi</a>
+        <a href="registrazione.html" class="btn secondary">Registrati</a>
+        <button class="btn scroll-btn" onclick="scrollToContatti()">Contattaci</button>
+        <button class="btn scroll-btn" onclick="scrollToDescrizione()">Scopri di più</button>
+    </div>
+  </header>
+
+  <section class="materie">
+    <div class="card">
+      <img src="img/fisica.png" alt="Fisica" />
+      <h2>Fisica</h2>
+      <p>Scopri le leggi che governano l'universo e i principi della materia.</p>
+    </div>
+
+    <div class="card">
+      <img src="img/leopardi.jpg" alt="Giacomo Leopardi" />
+      <h2>Italiano</h2>
+      <p>Rifletti sull'animo umano con le parole dei grandi autori.</p>
+    </div>
+
+    <div class="card">
+      <img src="img/mate.png" alt="Matematica" />
+      <h2>Matematica</h2>
+      <p>Dai numeri al pensiero astratto: allenati con la logica.</p>
+    </div>
+  </section>
+
+  <section class="footer-banner">
+    <p>...e altro</p>
+  </section>
+
+  <section class="contattaci" id="contattaci">
+  <h2>Contattaci</h2>
+  <div class="contatti-container">
+    <div class="contatto">
+      <img src="img/mat.png" alt="Mat" class="avatar" />
+      <p>Mat</p>
+      <div class="social">
+        <img src="img/ig.png" alt="Instagram" />
+        <img src="img/fb.png" alt="Facebook" />
+      </div>
+    </div>
+    <div class="contatto">
+      <img src="img/ale.png" alt="Ale" class="avatar" />
+      <p>Ale</p>
+      <div class="social">
+        <img src="img/ig.png" alt="Instagram" />
+        <img src="img/fb.png" alt="Facebook" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="descrizione-app" id="descrizione">
+  <h2>Cos'è NoteMaster?</h2>
+  <p>
+    NoteMaster è un'app pensata per aiutarti a organizzare i tuoi appunti in base alle materie scolastiche. Puoi creare, salvare, modificare e rileggere le tue note in modo semplice e veloce.
+    <br><br>
+    Ogni materia ha il suo spazio dedicato. Salva idee, riassunti, esercizi e tanto altro... tutto sincronizzato online!
+  </p>
+</section>
+
+<script>
+  function scrollToContatti() {
+    const el = document.getElementById("contattaci");
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+    function scrollToDescrizione() {
+    document.getElementById("descrizione").scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Dacci un feedback - NoteMaster</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/book.svg"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/feedback.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+  <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+  <!-- barra superiore -->
+  <div class="top-bar">
+    <nav>
+      <a href="subjects.html">Home</a>
+      <a href="php/logout.php">Logout</a>
+    </nav>
+  </div>
+
+  <!-- contenuto -->
+   <div class="fullscreen-container">
+    <img src="img/notes2.jpeg" alt="NoteMaster Background" class="background-img" />
+    <div class="overlay" id="div-form">
+  <div class="container" id="app">
+    <h1>Dacci un feedback</h1>
+    <p>Ci piacerebbe sapere cosa pensi di NoteMaster!</p>
+
+    <form @submit.prevent="inviaFeedback">
+      <textarea v-model="messaggio" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+      <button type="submit">Invia</button>
+    </form>
+
+    <p v-if="risposta" class="feedback-response">{{ risposta }}</p>
+  </div>
+
+  <!-- vue app -->
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          messaggio: '',
+          risposta: ''
+        };
+      },
+      methods: {
+        inviaFeedback() {
+          const formData = new FormData();
+          formData.append("message", this.messaggio);
+
+          fetch("php/sendFeedback.php", {
+            method: "POST",
+            body: formData
+          })
+          .then(res => res.text())
+          .then(text => {
+            this.risposta = text;
+            this.messaggio = '';
+          })
+          .catch(() => {
+            this.risposta = "Errore durante l'invio.";
+          });
+        }
+      }
+    }).mount("#app");
+  </script>
+  </div>
+  </div>
+</body>
+</html>

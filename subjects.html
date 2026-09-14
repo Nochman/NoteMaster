@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <title>NoteMaster</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        
+         <link rel="shortcut icon" href="img/book.svg">
+        <link href="css/subjectbootstrap.css" rel="stylesheet" />
+        <style>
+            @media (max-width: 768px) {
+            .navbar .navbar-brand {
+                padding-left: 1rem;
+            }
+            .navbar .navbar-toggler {
+                margin-right: 1rem;
+            }
+            }
+        </style>       
+        <link rel="stylesheet" href="css/subjects.css">
+        <script src="https://unpkg.com/vue@3"></script>
+
+    </head>
+
+    <body id="page-top">
+        
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"> NoteMaster! </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Cosa puoi fare!</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Materie!</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team"> Il nostro Team!</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#appunti-section">Le mie note!</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="feedback.html">Dacci un feedback!</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="php/logout.php">Logout!</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-heading text-uppercase">{{ nomeUtente }}, Benvenuto su NoteMaster!</div>
+                <div class="masthead-subheading">Qui ogni materia diventa il tuo campo di battaglia. Con NoteMaster, imparare è la tua arma segreta per il successo. Trasforma lo studio in potenza e conoscenza!</div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Scopri di più!</a>
+            </div>
+        </header>
+
+
+
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Cosa puoi fare!</h2>
+                    <h3 class="section-subheading text-muted">Accedi a numerose note e contribuisci ad uno studio più organizzato!</h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-plus fa-stack-1x fa-inverse"></i> <!-- icona per aggiungere -->
+                        </span>
+                        <h4 class="my-3">Aggiungi note</h4>
+                        <p class="text-muted">Crea nuove note e arrichisci le informazioni per ogni materia.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-edit fa-stack-1x fa-inverse"></i> <!-- icona per modificare -->
+                        </span>
+                        <h4 class="my-3">Modifica note</h4>
+                        <p class="text-muted">Personalizza e migliora le tue note, affinando le informazioni in base alle tue esigenze.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-trash fa-stack-1x fa-inverse"></i> <!-- icona per eliminare -->
+                        </span>
+                        <h4 class="my-3">Elimina note</h4>
+                        <p class="text-muted">Rimuovi le note che non ti servono più e mantieni le informazioni pulite e organizzate.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-book-open fa-stack-1x fa-inverse"></i> <!-- icona per leggere -->
+                        </span>
+                        <h4 class="my-3">Leggi note</h4>
+                        <p class="text-muted">Consulta e leggi le note disponibili per approfondire le tue conoscenze.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center ">
+                    <h2 class="section-heading text-uppercase">Scegli una materia!</h2>
+                    <h3 class="section-subheading text-muted">Scegli una materia tra quelle che offriamo.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="img/leopardi.jpg" style="width: 400px; height: 250px;" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading" >italiano!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="img/latino.png" style="width: 400px; height: 250px;" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">latino!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="img/storia.png" style="width: 400px; height: 250px;" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">storia!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="img/filosofia.png" style="width: 400px; height: 250px;" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">filosofia!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="img/mate.png" style="width: 400px; height: 250px;" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">matematica!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="img/fisica.png" style="width: 400px; height: 250px;" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">fisica!</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="text-mycenter" id="appunti-section">
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger " onclick="caricaAppunti()">Clicca qui per visualizzare le tue note!</a>
+                </div>
+                <div id="appunti-container" style="display: none; margin-top: 20px;">
+                    <div id="appunti"></div>
+                </div>
+                <script src="js/appunti.js"></script>
+            </div>
+        </section>
+
+
+        <!-- Team-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">IL SUPERTEAM</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="team-member">
+                            <img  id="rotazione180" class="mx-auto rounded-circle" src="img/mat.png" alt="..." />
+                            <h4>Matteo</h4><br>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="team-member">
+                            <img id="rotazione180" class="mx-auto rounded-circle" src="img/ale.png" alt="..." />
+                            <h4>Alessandro</h4><br>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Alessandro e Matteo sono due studenti di Ingegneria Informatica e Automatica della Sapienza</p></div>
+                </div>
+            </div>
+        </section>
+
+
+      
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="img/close-icon.svg" alt="Close modal"/></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">ITALIANO!</h2>
+                                    <p class="item-intro text-muted">Esplora la letteratura e la lingua italiana attraverso i suoi grandi autori!</p>
+                                    <img class="img-fluid d-block mx-auto" src="img/leopardi.jpg" style="width: 200px; height: 200px;" alt="..."/>
+                                    <p>Dai versi di Dante alle riflessioni di Leopardi, passando per la prosa di Manzoni. Scopri l'evoluzione della lingua italiana e il pensiero dei suoi più grandi autori, immergendoti in storie che hanno segnato la cultura e la società.</p>
+                                    
+                                    <a href="view-notes.html?subject=italiano">Visualizza note</a>
+                                    <br></br>
+                                    <a href="create-note.html?subject=italiano">Crea note</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">STORIA!</h2>
+                                    <p class="item-intro text-muted">Lezioni dal passato: storia, conquiste e rivoluzioni</p>
+                                    <img class="img-fluid d-block mx-auto" src="img/storia.png" style="width: 200px; height: 200px;" alt="..." />
+                                    <p>Ogni evento storico è una lezione per il futuro. Dalle civiltà antiche alle rivoluzioni che hanno cambiato il mondo, la storia ci aiuta a comprendere chi siamo e dove stiamo andando. Esplora i momenti chiave che hanno plasmato la società, la cultura e il pensiero umano.</p>
+
+                                    <a href="view-notes.html?subject=storia">Visualizza note</a>
+                                    <br></br>
+                                    <a href="create-note.html?subject=storia">Crea note</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">FILOSOFIA</h2>
+                                    <p class="item-intro text-muted">Il pensiero che ha plasmato il mondo: esplora la filosofia e le sue idee.</p>
+                                    <img class="img-fluid d-block mx-auto" src="img/filosofia.png" style="width: 200px; height: 200px;" alt="..." />
+                                    <p>Dai dialoghi di Socrate alle riflessioni di Nietzsche, la filosofia è la ricerca della verità e della conoscenza. Scopri le grandi correnti di pensiero che hanno influenzato la società, la politica e la scienza. Analizza concetti come etica, logica e metafisica per comprendere meglio il mondo e te stesso.</p>
+
+                                    <a href="view-notes.html?subject=filosofia">Visualizza note</a>
+                                    <br></br>
+                                    <a href="create-note.html?subject=filosofia">Crea note</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">MATEMATICA!</h2>
+                                    <p class="item-intro text-muted">Dai numeri alla logica: scopri la bellezza del pensiero matematico</p>
+                                    <img class="img-fluid d-block mx-auto" src="img/mate.png" style="width: 200px; height: 200px;" alt="..." />
+                                    <p>La matematica è il linguaggio dell’universo. Dalle formule ai teoremi, passando per l’algebra e la geometria, impara a risolvere problemi e a sviluppare il tuo ragionamento logico. Scopri come la matematica è alla base di scienza, tecnologia e persino arte!</p>
+
+                                    <a href="view-notes.html?subject=matematica">Visualizza note</a>
+                                    <br></br>
+                                    <a href="create-note.html?subject=matematica">Crea note</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">FISICA</h2>
+                                    <p class="item-intro text-muted">Dalla gravità alla meccanica quantistica: esplora le leggi dell'universo.</p>
+                                    <img class="img-fluid d-block mx-auto" src="img/fisica.png" style="width: 200px; height: 200px;" alt="..." />
+                                    <p> La fisica è la chiave per comprendere il funzionamento del mondo. Dalle leggi di Newton alla relatività di Einstein, passando per l'affascinante mondo della meccanica quantistica, scopri come le forze e le energie modellano la realtà che ci circonda.</p>
+
+                                    <a href="view-notes.html?subject=fisica">Visualizza note</a>
+                                    <br></br>
+                                    <a href="create-note.html?subject=fisica">Crea note</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">LATINO</h2>
+                                    <p class="item-intro text-muted">Lingua immortale della civiltà romana: scopri il latino e il suo lascito.</p>
+                                    <img class="img-fluid d-block mx-auto" src="img/latino.png" style="width: 200px; height: 200px;" alt="..." />
+                                    <p> Il latino non è solo una lingua antica, ma la chiave per comprendere il pensiero, la filosofia e la letteratura di Roma. Da Cicerone a Virgilio, esplora testi che hanno influenzato l'arte, la politica e la scienza per secoli. Scopri come il latino continua a vivere nella nostra cultura e nelle lingue moderne!</p>
+
+                                    <a href="view-notes.html?subject=latino">Visualizza note</a>
+                                    <br></br>
+                                    <a href="create-note.html?subject=latino">Crea note</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+        <script src="js/jqBootstrapValidation.js"></script>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+            nomeUtente: '' 
+        };
+      },
+      mounted() {
+      fetch('php/getNome.php')
+        .then(res => res.text())
+        .then(nome => {
+          this.nomeUtente = nome;
+        });
+    }
+    }).mount('.masthead');
+  </script>
+    </body>
+</html>

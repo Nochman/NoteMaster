@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>vedi note - notemaster</title>
+  <link rel="shortcut icon" href="img/book.svg"/>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/notes.css" />
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+  <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body class="notes-page">
+  <div class="top-bar">
+  <nav>
+    <a href="subjects.html">Home</a>
+    <a href="feedback.html">Dacci un feedback</a>
+    <a href="php/logout.php">Logout</a>
+  </nav>
+</div>
+  <div class="fullscreen-container">
+    <img src="img/notes2.jpeg" alt="NoteMaster Background" class="background-img" />
+    <div class="overlay">
+      <img src="img/logo bootstrap.png" class="mb-2" width="100px">
+  <div id="app" class="container" style="padding-top: 69px;">
+    <h1>Note per {{ subject }}</h1>
+
+    <!-- lista delle note -->
+    <p v-if="loading">Caricamento note...</p>
+
+    <ul v-else-if="notes.length" class="note-list">
+      <li v-for="note in notes" :key="note.title" class="note-card">
+        <h2>{{ note.title }}</h2>
+        <p>{{ note.body }}</p>
+      </li>
+    </ul>
+
+  <p v-else class="no-notes">Nessuna nota trovata.</p>
+
+  </div>
+  </div>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          subject: '',
+          notes: [],
+          loading: true
+        };
+      },
+      mounted() {
+        // prendi la materia dalla url
+        const params = new URLSearchParams(window.location.search);
+        this.subject = params.get('subject') || 'sconosciuta';
+
+        // richiedi le note dal server
+        fetch('php/getNotes.php?subject=' + encodeURIComponent(this.subject))
+          .then(res => res.json())
+          .then(data => {
+            this.notes = data;
+            this.loading = false;
+          });
+            }
+    }).mount('#app');
+  </script>
+</body>
+</html>

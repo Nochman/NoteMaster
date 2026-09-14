@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrazione</title>
+  <link rel="shortcut icon" href="img/book.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <script src="js/formValidation.js" type="application/javascript"></script>
+</head>
+<body class="text-center">
+  <div class="fullscreen-container">
+    <img src="img/notes2.jpeg" alt="Sfondo NoteMaster" class="background-img">
+    <div class="overlay">
+      <form id="registrazioneForm" name ="myform" action="php/registrazione.php" method="POST" class="form-signin m-auto" onsubmit="return validaForm()">
+        <div id="message" style="margin-top: 15px; font-weight: bold;"></div>
+        <img src="img/logo bootstrap.png" class="mb-2" width="100" alt="Logo">
+        <h1 class="mb-3 font-weight-normal">Registrati!</h1>
+        <input type="text" id="email" name="inputEmail" class="form-control" placeholder="Indirizzo e-mail" required>
+        <input type="password" id="password" name="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="text" id="nome" name="inputName" class="form-control" placeholder="Nome" required>
+        <input type="text" id="cognome" name="inputSurname" class="form-control" placeholder="Cognome" required>
+
+        <div class="mb-2">
+          <input type="checkbox" name="remember" id="rmb">
+          <label for="rmb">Ricordami</label>
+        </div>
+
+        <p>Hai già un account? <a href="login.html">Accedi qui</a>.</p>
+        <button type="submit" class="btn btn-primary">Invia!</button>
+      </form>
+    </div>
+  </div>
+  <script src="js/registrazione.js"></script>
+</body>
+</html>
