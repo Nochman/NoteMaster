@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f0e6;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+/* pulsanti generici */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0f5ec2;
+}
+
+/* form di create-note */
+form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form textarea {
+  min-height: 150px;
+  resize: both;
+}
+
+form .btn {
+  width: 100%;
+}
+
+/* messaggio di conferma */
+p {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  color: green;
+}
+
+/* lista delle note in view-notes */
+.note-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.no-notes {
+    font-size: 50px; 
+    font-weight: bold; 
+    text-align: center; 
+    color: green; 
+    margin-top: 20px; 
+}
+
+
+.note-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-size: 20px; 
+  line-height: 1.6; 
+  padding: 10px;
+}
+
+.note-card h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.note-card p {
+  margin: 0;
+  color: #444;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 0.95rem;
+  }
+
+  .note-card h2 {
+    font-size: 1.1rem;
+  }
+
+  
+}
+/* pulsanti di azione per le note */
+.note-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.note-actions .btn {
+  min-width: 140px;
+  padding: 14px 28px;
+  font-size: 1.05rem;
+  background-color: #1a73e8;
+  border-radius: 10px;
+}
+
+/* responsive: pulsanti impilati */
+@media (max-width: 600px) {
+  .note-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .note-actions .btn {
+    width: 100%;
+  }
+}
+
+#app p.message {
+    font-size: 50px;
+    font-weight: bold; 
+    text-align: center;
+    color: green; 
+    margin-top: 20px;
+}
+
+#app textarea {
+    font-size: 25px;
+    line-height: 1.5; 
+}

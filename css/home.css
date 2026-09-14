@@ -1,0 +1,216 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfaf6;
+  color: #333;
+}
+
+.hero {
+  background-color: #f5f0e6; /* beige */
+  color: #333;
+  text-align: center;
+  padding: 4rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.materie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+.card {
+  background-color: #b22222; /* scarlatto */
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex; /* 🔹 Organizza gli elementi */
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 80%;
+  height: 200px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.card p {
+  padding: 0 1rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.cta-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  transition: 0.3s ease;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #0f5ec2;
+  color: white;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  border: 2px solid #1a73e8;
+  color: #1a73e8;
+}
+
+.btn.secondary:hover {
+  background-color: #e0e0e0;
+}
+
+.scroll-btn {
+  background-color: #555;
+}
+
+.scroll-btn:hover {
+  background-color: #333;
+}
+
+
+.footer-banner {
+  padding: 4rem 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #555;
+  opacity: 0.7;
+}
+
+.contattaci {
+  background-color: #111;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contattaci h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contatti-container {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.contatto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.contatti-container {
+  display: flex;
+  justify-content: center;
+  gap: 6rem; /* più spazio tra i contatti */
+  flex-wrap: wrap;
+}
+
+.social img {
+  width: 36px;
+  height: 36px;
+  margin: 0 8px;
+  background-color: white;      /* sfondo bianco */
+  padding: 6px;
+  border-radius: 50%;           /* rende il padding circolare */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.social img:hover {
+  transform: scale(1.1);
+}
+
+.descrizione-app {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #fdfaf6;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.descrizione-app h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.descrizione-app p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .hero h1 {
+    font-size: 2rem; /* più piccolo rispetto a prima */
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+
